@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: cornflowerblue;
+}
+
+h1 {
+  font-size: 64px;
+  font-family: 'Nutino', serif;
+  color: white;
+  margin-bottom: -1%;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: white;
+}
+
+form {
+  margin-top: 13%;
+  top: 50%;
+}
+textarea {
+  width: 50%;
+  height: 20px;
+  border-radius: 3px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: white;
+}
