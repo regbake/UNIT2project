@@ -23,8 +23,8 @@ app.get("/", function(req, res){
   })
 });
 
-app.post("/hi", upload.single("myFile"), function(req, res){
-  res.send(req.file);
+app.post("/upload", upload.single("myFile"), function(req, res){
+  res.redirect("/");
 });
 
 app.listen(3000);
