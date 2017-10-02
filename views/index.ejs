@@ -1,4 +1,9 @@
-<h1>Hello world</h1>
+<h1>File Upload</h1>
+
+<form enctype="multipart/form-data" action="/hi" method="post">
+  <input type="file" name="myFile">
+  <input type="submit">
+</form>
 
 <!-- Display all the authors from db -->
 <% authors.authors.forEach(function(authors){ %>

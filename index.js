@@ -3,6 +3,7 @@ var bodyParser = require("body-parser");
 var ejsLayouts = require("express-ejs-layouts");
 var request = require("request");
 var multer = require("multer");
+var upload = multer({dest: './uploads/'});
 var db = require("./models");
 var app = express();
 
@@ -20,6 +21,10 @@ app.get("/", function(req, res){
     console.log(authors.authors.length);
     res.render("index", {authors: authors});
   })
+});
+
+app.post("/hi", upload.single("myFile"), function(req, res){
+  res.send(req.file);
 });
 
 app.listen(3000);
