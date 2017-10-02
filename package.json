@@ -1,0 +1,29 @@
+{
+  "name": "unit2-project",
+  "version": "1.0.0",
+  "description": "txtphile app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regbake/unit2-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/regbake/unit2-project/issues"
+  },
+  "homepage": "https://github.com/regbake/unit2-project#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "express-ejs-layouts": "^2.3.1",
+    "pg": "^6.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4"
+  }
+}
