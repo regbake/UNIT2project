@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(ejsLayouts);
 app.use(express.static(__dirname + "/public/"));
 
+app.get("/", function(req, res){
+  res.render("index");
+});
+
 app.listen(3000);
 
-module.exports = server;
+// module.exports = server;
