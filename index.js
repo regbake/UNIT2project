@@ -2,9 +2,13 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var ejsLayouts = require("express-ejs-layouts");
 var request = require("request");
+
+//multer shiz
 var multer = require("multer");
 var fs = require("fs");
-var upload = multer({dest: './uploads/'});
+var storage = multer.memoryStorage()
+var upload = multer({storage: storage});
+
 var db = require("./models");
 var app = express();
 
@@ -20,21 +24,16 @@ app.get("/", function(req, res){
 
   request(poetryUrl, function(error, response, body){
     var authors = JSON.parse(body);
-    console.log(authors.authors.length);
     res.render("index", {authors: authors});
   })
 });
 
 //handle the uploaded files
 app.post("/upload", upload.single("myFile"), function(req, res){
-  console.log(req.file);
-  //now delete all the files in the upload folder
-  fs.readdir('./uploads', function(err, items) {
-  items.forEach(function(file) {
-      fs.unlink('./uploads/' + file);
-      //console.log('Deleted ' + file);
-    });
-  });
+  var text = req.file.buffer.toString("utf8");
+  userUploads.push(text);
+  console.log(userUploads);
+  // console.log(text, text.length);
   res.redirect("/");
 });
 
